@@ -1,0 +1,37 @@
+<div ng-controller="edit">
+     <h2 class="page-header text-center">
+     <span ng-show="newContact">Create</span><span ng-show="!newContact">Edit</span> Contact</h2>
+      <form  name="contactForm" ng-submit="addOrUpdateContact()" class="form-horizontal contract-form" novalidate >
+        <div class="form-group">
+          <label class="col-sm-4 control-label">Full name:</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control contact-name-input"  name="name" ng-model="contact.name" required>
+            
+          </div>
+        <span ng-show="contactForm.name.$invalid && !contactForm.name.$pristine" class="help-block"> Name is required.</span>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-4 control-label">Email address:</label>
+          <div class="col-sm-6">
+            <input name="email" type="email" class="form-control contact-email-input" placeholder="abc@example.com" ng-model="contact.email" required>
+
+          </div>
+        <span ng-show="contactForm.email.$invalid && !contactForm.email.$pristine" class="help-block"> Email-id is required.</span>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-4 control-label">Telephone number:</label>
+          <div class="col-sm-6">
+            <input name="tel" type="tel" class="form-control contact-tel-input" placeholder="(333) 333-3333"  ng-model="contact.tel">
+        
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-4 col-sm-3">
+            <button type="submit" ng-disabled="contactForm.$invalid" class="btn btn-outline btn-lg btn-block" >Submit</button>
+          </div>
+          <div class="col-sm-3">
+            <a href="#/" class="btn btn-outline btn-lg btn-block">Cancel</a>
+          </div>
+        </div>
+      </form>
+</div>
