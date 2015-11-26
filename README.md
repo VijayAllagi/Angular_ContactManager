@@ -9,7 +9,7 @@
 ![Main](https://github.com/VijayAllagi/images/blob/master/MainScreen.png)
 </strong></p>
 <p><strong>Edit Contact Manager View 
-![Edit](https://github.com/VijayAllagi/images/blob/master/EditScree.pngg)
+![Edit](https://github.com/VijayAllagi/images/blob/master/EditScree.png)
 </strong></p>
 <p><strong>Add Contact Manager View 
 ![Add](https://github.com/VijayAllagi/images/blob/master/AddScreen.png)
