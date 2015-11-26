@@ -14,7 +14,7 @@ app.controller('edit',['$scope','$route','$routeParams','$location', function ($
           var contact;
           $scope.newContact = false;                  
           var id = $scope.$routeParams.id;
-           contact =  $scope.getContact(id);
+          contact =  $scope.getContact(id);
         }
         $scope.addOrUpdateContact = function(){
             if($scope.newContact == true){
