@@ -1,8 +1,8 @@
 {
   "name": "contactmanager",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "dependencies": {
-    "express": "^4.13.3",
+    "express": "~3.0.0",
     "gzippo": "^0.2.0"
   },
   "devDependencies": {
