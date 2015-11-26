@@ -131,20 +131,24 @@ module.exports = function (grunt) {
     },
 
     // Empties folders to start fresh
-    clean: {
-      dist: {
-        files: [{
-          dot: true,
-          src: [
-            '.tmp',
-            '<%= yeoman.dist %>/{,*/}*',
-            '!<%= yeoman.dist %>/.git{,*/}*'
-          ]
-        }]
-      },
-      server: '.tmp'
-    },
 
+    clean: {
+    dist: {
+        files: [{
+            dot: true,
+            src: [
+                '.tmp',
+                '<%= yeoman.dist %>/*',
+                '!<%= yeoman.dist %>/.git{,*/}*',
+                '!<%= yeoman.dist %>/Procfile',
+                '!<%= yeoman.dist %>/package.json',
+                '!<%= yeoman.dist %>/index.js',
+                '!<%= yeoman.dist %>/node_modules'
+           ]
+        }]
+    },
+    server: '.tmp'
+},
     // Add vendor prefixed styles
     autoprefixer: {
       options: {
@@ -354,7 +358,20 @@ module.exports = function (grunt) {
         'svgmin'
       ]
     },
-
+    buildcontrol: {
+    options: {
+        dir: 'dist',
+        commit: true,
+        push: true,
+        message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+    },
+    heroku: {
+        options: {
+            remote: 'vijay.allagi@gmail.com:angular-contact-mngr-vij.git',
+            branch: 'master'
+        }
+    }
+ },
     // Test settings
     karma: {
       unit: {
@@ -392,7 +409,7 @@ module.exports = function (grunt) {
     'connect:test',
     'karma'
   ]);
-
+grunt.registerTask('deploy', ['buildcontrol'])
   grunt.registerTask('build', [
     'clean:dist',
     'wiredep',
